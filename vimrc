@@ -11,10 +11,10 @@ call plug#end()
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾' 
-
+ 
 
 function! Prettier()
   execute '! prettier --single-quote --write %'
@@ -27,14 +27,21 @@ nmap <c-k> :call Prettier()<CR>
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
+:inoremap <c-z> <esc><c-z>
+
+"semicolons are easy to type.
+:imap ;; <Esc>
+" Press Shift-Space (may not work on your system).
+":imap <S-Space> <Esc>
 
 " map ctrl+s to save
 " nmap <c-s> :w<CR>
-
+ 
 "set rtp+=~/.fzf
 "set rtp+=~/usr/local/opt/fzf
 " map fzf
 nmap <c-o> :FZF<CR>
+nmap <c-n> :NERDTree<CR>
 
 syntax enable
 set encoding=utf-8
@@ -58,4 +65,5 @@ set nobackup        " set no backup
 set incsearch
 set backspace=2     " backspace size
 set autowrite       " autosave
-autocmd InsertLeave * set nopaste " Disable paste mode on leaving insert mode
+
+"autocmd InsertLeave * set nopaste " Disable paste mode on leaving insert mode
