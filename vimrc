@@ -7,6 +7,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'scrooloose/nerdtree'
+  Plug 'Valloric/YouCompleteMe'
+  Plug 'ternjs/tern_for_vim'
+  Plug 'townk/vim-autoclose'
 call plug#end()
 
 autocmd StdinReadPre * let s:std_in=1
@@ -29,10 +32,6 @@ vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 :inoremap <c-z> <esc><c-z>
 
-"semicolons are easy to type.
-:imap ;; <Esc>
-" Press Shift-Space (may not work on your system).
-":imap <S-Space> <Esc>
 
 " map ctrl+s to save
 " nmap <c-s> :w<CR>
