@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'scrooloose/nerdtree'
-  Plug 'Valloric/YouCompleteMe'
+"  Plug 'Valloric/YouCompleteMe'
   Plug 'ternjs/tern_for_vim'
   Plug 'townk/vim-autoclose'
 call plug#end()
